@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Item</title>
 </head>
 <body>
-    <h1>Add a todo item:</h1>
+    <h1>Edit a todo item:</h1>
 
-    <form method="POST" action=""add>
+    <form method="POST" >
 <!-- adds a token to guarantee this data is coming from the app, not somewhere else. -->
         {% csrf_token %}
         <div>
@@ -16,7 +16,7 @@
          {{ form.as_p }}
             <p>
             <button type="submit">
-            Add Item
+            Update Item
             </button>
             </p>
         </div>

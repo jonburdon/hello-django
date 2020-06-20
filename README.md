@@ -120,6 +120,27 @@ def __str__(self):
 ``
 
 
+## Moving forward with creating html views:
+To create new views after creating associated template, define them in views.py and update urls.py .
+
+
+## Forms
+Rather than creating the form ourself in html, django can create the form and then we add this as an input variable. The avoids input errors eg if the model marks something as required but then this is not marked as such in the html.
+
+Therefore:
+forms.py is created next and then `from .forms import ItemForm` is added in views.py
+
+This will need to be added to the view.py file:
+
+``
+    form = ItemForm()
+    context = {
+        'form' : form
+    }
+``
+
+
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
