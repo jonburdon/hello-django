@@ -64,6 +64,62 @@ Example:
 
 NB in settings.py add this app to list of apps
 
+
+## Commands for database changes and migrations
+
+These commands update the python code so that it can make correct changes to the code for this project that handles the database.
+
+`python3 manage.py makemigrations --dry-run` to dry run changes to database.
+
+`python3 manage.py showmigrations`
+
+`python3 manage.py migrate --plan` Show what the migrate will actually do, by using the plan flag.
+
+`python3 manage.py migrate` Use for initial setup and then any future changes which will affect database handling. 
+
+`python3 manage.py createsuperuser` To create superuser for this project
+
+Go to project /admin to log in.
+
+## Creating bespoke data models
+
+`class Item():` is analagos to creating a 'sheet' in a spreadsheet. This will automatically create a new 'sheet' in the database when migrations are run.
+
+EG:
+
+`class Item(models.Model):`
+`    name = models.CharField(max_length=50, null=False, blank=False)`
+`   done = models.BooleanField(null=False, blank=False, default=False)`
+
+Creates data table for Todos list with todo item and done field. NOTE id field is created automatically.
+
+`python3 manage.py makemigrations --dry-run`
+
+`python3 manage.py makemigrations`
+
+This code will be converted to sql and run by python.
+
+`python3 manage.py migrate --plan`
+
+This now needs to be registered in Admin.py to make it visible in the admin panel.
+eg:
+``
+from django.contrib import admin
+from .models import Item
+
+admin.site.register(Item)
+``
+
+Items will display as eg Item object (1) in database until we override the default inherrited name for fields in this row.
+
+eg in models.py:
+
+``
+def __str__(self):
+        return self.name
+``
+
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
