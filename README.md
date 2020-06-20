@@ -1,8 +1,68 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Gitpod To do
 
-Welcome USER_NAME,
+Based on Code Institute Tutorial
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Technologies
+1. HTML
+2. CSS
+3. Python
+4. Django
+
+
+
+## Project build process and build notes
+
+### To Initiate:
+https://github.com/Code-Institute-Org/gitpod-full-template and choose Use This template
+install django using Pip:
+
+`pip3 install django`
+
+Create a django project called django_todo in the current folder:
+
+`django-admin startproject django_todo .`
+
+Note: the . opens the project in the current folder.
+
+To run:
+
+`python3 manage.py runserver`
+
+
+To create new app:
+
+`python3 manage.py startapp todo`
+
+Open the views.py for this app. Views interface between the data and the front end.
+
+
+Example:
+
+`from django.shortcuts import render, HttpResponse
+
+def say_hello(request):
+    return HttpResponse("Hello!")`
+
+Next edit urls.py in root project folder:
+
+`from django.contrib import admin
+from django.urls import path
+from todo.views import say_hello
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('hello/', say_hello, name="hello")
+]`
+
+Now the function in views_py will be available in root/hello
+
+### Templates
+
+Create folder called templates within project folder and subfolder called todo then filename.HTML
+Example:
+`templates/todo/todo_list.html`
+
+NB in settings.py add this app to list of apps
 
 ## Gitpod Reminders
 
