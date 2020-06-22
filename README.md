@@ -140,6 +140,28 @@ This will need to be added to the view.py file:
 ``
 
 
+## CRUD Functions
+
+These were created in views.py
+URLs for each function are defined in urls.py
+todo_list.html contains the main functionality with edit_item.html and add_item.html containing from end templates and ui for those functions.
+
+## Testing
+
+tests.py is created automatically by django.
+
+``
+class TestDjango(TestCase):
+    def test_this_thing_works(self):
+        #test if 1 = 0 (this test should fail)
+        self.assertEqual(1,0)
+
+``
+
+To run tests:
+`python3 manage.py test`
+
+Assertions such as equal, true, false and so on are used in django as in any other testing framework.
 
 ## Gitpod Reminders
 
