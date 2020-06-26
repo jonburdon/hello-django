@@ -189,7 +189,23 @@ OR run one specific test:
 
 `python3 manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_metaclass`
 
+### The Coverage tool shows what percentage of code is being tested
 
+install:
+`pip3 install coverage`
+
+run:
+`coverage run --source=todo manage.py test`
+
+report is accessed via:
+`coverage report`
+
+interactive html report:
+`coverage html`
+
+To view this in Gitpod `python3 -m http.server`
+
+Creates a folder called htmlcov
 
 ## Gitpod Reminders
 
