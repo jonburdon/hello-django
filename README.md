@@ -8,6 +8,13 @@ Based on Code Institute Tutorial
 3. Python
 4. Django
 
+## Project Aims
+1. Use built in Django CRUD functions to create a simple TODO App.
+
+## Developer Aims 
+1. Demonstrate simple django initial setup using github and gitpod
+2. Implement basic CRUD functions
+3. Include sufficient documentation (Readme and comments in code) to understand the above
 
 
 ## Project build process and build notes
