@@ -163,6 +163,27 @@ To run tests:
 
 Assertions such as equal, true, false and so on are used in django as in any other testing framework.
 
+
+NOTE:
+.FEF syntax means in this case tests pass, fail, error, fail
+
+NOTE:
+tests.py renamed to test_views.py to keep tests organised - these tests will jus test views.py 
+
+`python3 manage.py test` runs all tests or the following syntax will run just one specific file:
+
+`python3 manage.py test todo.test_forms`
+
+Or run just a specific class of tests:
+
+`python3 manage.py test todo.test_forms.TestItemForm`
+
+OR run one specific test:
+
+`python3 manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_metaclass`
+
+
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
