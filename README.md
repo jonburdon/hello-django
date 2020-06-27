@@ -294,4 +294,17 @@ Create `Procfile` with a capital P
 
 Add `web: gunicorn django_todo.wsgi:application` to the Procfile
 
-This will tell 
+This will tell heroku we are running a web application
+
+Push to Heroku again.
+
+This should now run with a django error which means the project is at least running!
+
+We need to add Heroku to the list of allowed hosts. This is important to keep the app secure.
+
+In Settings:
+
+change `ALLOWED_HOSTS = []`
+to, for example:
+`ALLOWED_HOSTS = ['https://jb-django-todo-app.herokuapp.com/']`
+
