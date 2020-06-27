@@ -240,6 +240,41 @@ Create app, specifying app name:
 
 specify `--region eu` for eu region
 
+`git remote -v` Shows available git repositories
+
+Therefore `git push heroku master` will push to the url displayed or `git push origin master` would push to github assuming that has been set up.
+
+Create database addon for Heroku.
+
+Use Heroku web gui:
+Dashboard -> Project -> Resources
+Addons -> Postgres -> Heroku Postgres -> Provision
+Settings -> Reveal Config Vars
+
+To connect the app to this new permanently live Postgres database:
+
+`pip3 install dj_database_url`
+
+This allows the connection between databases.
+
+`pip3 freeze --local > requirements.txt`
+
+`heroku config`
+
+In settings.py find the database settings.
+
+Change to:
+`DATABASES = {    'default': dj_database_url.parse('')}`
+
+Paste in the url from Heroku between the quotes within the brackets - parse('HERE!!!')
+
+`import dj_database_url` at the top of settings.py
+
+In terminal:
+`python3 manage.py migrate`
+Migrates the data to new online database
+
+
 
 
 ## Gitpod Reminders
