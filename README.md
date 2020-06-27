@@ -311,3 +311,28 @@ to, for example:
 ### Connecting github an heroku so pushing to Github with sync with Heroku
 
 In Heroku Dashboard.
+
+Select Deploy -> github. Login, choose repo and connect.
+
+Beneath this, Automatic deployment or manual deployment can be selected.
+
+Test this works, and hide secret key:
+
+In settings.py:
+
+`SECRET_KEY = os.environ.get('SECRET_KEY', 'smcjqwguq8f4wonpmd7x55odz=%srjn)^qo2zv+b78y*t6^pp%')`
+
+`ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST', 'jb-django-todo-app.herokuapp.com')]`
+
+`DATABASES = {    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}`
+
+Now add these environment variables to Heroku. You can use the cli or the dashboard:
+
+Web Dashboard method:
+
+Heroku App -> Settings -> Reveal Config variables
+
+Add HEROKU_HOSTNAME ensuring `https://` and `/` are removed from each end.
+
+
+
