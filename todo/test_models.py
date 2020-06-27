@@ -8,3 +8,7 @@ class TestModels(TestCase):
         item = Item.objects.create(name = 'Test Todo Item')
         self.assertFalse(item.done)
         
+    def test_models_string_method_returns_name(self):
+        # Create an item with a name and then confirm this name is returned when this item is rendered as a string.
+        item = Item.objects.create(name = 'Test Todo Item')
+        self.assertEqual(str(item), 'Test Todo Item')

@@ -203,9 +203,44 @@ report is accessed via:
 interactive html report:
 `coverage html`
 
+Creates a folder called htmlcov
+
 To view this in Gitpod `python3 -m http.server`
 
-Creates a folder called htmlcov
+Open in browser, and view the file. For example if models.py is 89% tested the html report will highlight which parts of the code have not been tested.
+
+After changes, need to run Coverage again, then regenerate the html report and check again whether all code has been tested.
+
+
+## Deployment
+
+Heroku cli is installed by default with some Gitpod templates.
+It can be added by following this documentation: https://devcenter.heroku.com/articles/heroku-cli
+
+Login to Heroku.com 
+Then, in terminal run `heroku login`
+Click open browser then accept.
+
+Try typing `heroku` to see a list of command or `heroku apps help` to find help.
+
+### Install Postgress addon for Heroku and it's requirements:
+
+`pip3 install psycopg2-binary`
+
+Use gunicorn to act as a web server
+
+`pip3 install gunicorn`
+
+List requirements to a file so Heroku knows what to install
+
+`pip3 freeze --local > requirements.txt`
+
+Create app, specifying app name:
+`heroku apps:create jb-django-todo-app -- region ey`
+
+specify `--region eu` for eu region
+
+
 
 ## Gitpod Reminders
 

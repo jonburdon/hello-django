@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for todo/views.py: 89%</title>
+    <title>Coverage for todo/views.py: 100%</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.hotkeys.js"></script>
@@ -17,13 +17,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>todo/views.py</b> :
-            <span class="pc_cov">89%</span>
+            <span class="pc_cov">100%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             35 statements &nbsp;
-            <span class="run shortkey_r button_toggle_run">31 run</span>
-            <span class="mis show_mis shortkey_m button_toggle_mis">4 missing</span>
+            <span class="run shortkey_r button_toggle_run">35 run</span>
+            <span class="mis show_mis shortkey_m button_toggle_mis">0 missing</span>
             <span class="exc show_exc shortkey_x button_toggle_exc">0 excluded</span>
         </h2>
     </div>
@@ -85,10 +85,10 @@
     <p id="t32" class="pln"><span class="n"><a href="#t32">32</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t33" class="pln"><span class="n"><a href="#t33">33</a></span><span class="t"><span class="com">#post handler</span>&nbsp;</span><span class="r"></span></p>
     <p id="t34" class="run"><span class="n"><a href="#t34">34</a></span><span class="t">    <span class="key">if</span> <span class="nam">request</span><span class="op">.</span><span class="nam">method</span> <span class="op">==</span> <span class="str">"POST"</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t35" class="mis show_mis"><span class="n"><a href="#t35">35</a></span><span class="t">        <span class="nam">form</span> <span class="op">=</span> <span class="nam">ItemForm</span><span class="op">(</span><span class="nam">request</span><span class="op">.</span><span class="nam">POST</span><span class="op">,</span> <span class="nam">instance</span><span class="op">=</span><span class="nam">item</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t36" class="mis show_mis"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="key">if</span> <span class="nam">form</span><span class="op">.</span><span class="nam">is_valid</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t37" class="mis show_mis"><span class="n"><a href="#t37">37</a></span><span class="t">            <span class="nam">form</span><span class="op">.</span><span class="nam">save</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t38" class="mis show_mis"><span class="n"><a href="#t38">38</a></span><span class="t">        <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="str">'get_todo_list'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t35" class="run"><span class="n"><a href="#t35">35</a></span><span class="t">        <span class="nam">form</span> <span class="op">=</span> <span class="nam">ItemForm</span><span class="op">(</span><span class="nam">request</span><span class="op">.</span><span class="nam">POST</span><span class="op">,</span> <span class="nam">instance</span><span class="op">=</span><span class="nam">item</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t36" class="run"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="key">if</span> <span class="nam">form</span><span class="op">.</span><span class="nam">is_valid</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t37" class="run"><span class="n"><a href="#t37">37</a></span><span class="t">            <span class="nam">form</span><span class="op">.</span><span class="nam">save</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t38" class="run"><span class="n"><a href="#t38">38</a></span><span class="t">        <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="str">'get_todo_list'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t39" class="pln"><span class="n"><a href="#t39">39</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t40" class="pln"><span class="n"><a href="#t40">40</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t41" class="pln"><span class="n"><a href="#t41">41</a></span><span class="t"><span class="com"># pre fill the form with data from the database using instance=item</span>&nbsp;</span><span class="r"></span></p>
@@ -115,7 +115,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.1</a>,
-            created at 2020-06-26 10:30
+            created at 2020-06-26 11:02
         </p>
     </div>
 </div>
