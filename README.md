@@ -382,3 +382,17 @@ else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST', 'jb-django-todo-app.herokuapp.com')]
 
 ```
+
+### Securing Secret key
+
+Need to regenerate a new secret key and secure the app.
+
+Change settings.py to `SECRET_KEY = os.environ.get('SECRET_KEY', '')`
+
+Google 'django secret ket generator'
+Or: https://miniwebtool.com/django-secret-key-generator/
+
+Add the new key in gitpod settings.
+
+Generate a separate key for Heroku and add that too.
+
