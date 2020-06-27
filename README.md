@@ -310,3 +310,4 @@ to, for example:
 
 ### Connecting github an heroku so pushing to Github with sync with Heroku
 
+In Heroku Dashboard.
