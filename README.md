@@ -336,3 +336,49 @@ Add HEROKU_HOSTNAME ensuring `https://` and `/` are removed from each end.
 
 
 
+### Create local dev environment so the project can be run in Gitpod
+
+The database now exists only on Heroku, so we need to create a connection to a database when running the application in the local environment.
+
+We also need to make sure local is the only place where debug is ON.
+
+In settings.py:
+`development = os.environ.get('DEVELOPMENT', False)`
+
+So that if there is a variable called Development in the environment it's variable will be set to it's value. Otherwise it will be false.
+
+Change:
+`DEBUG = development`
+
+So now in development this will be True, and on Heroku it will be false. This avoids exposing any internal source code on the error page in the production version.
+
+Now, in settings.py:
+
+```
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+```
+
+So we can switch between databases based on whether the app is running local or production mode.
+
+In Gitpod.
+Upper right - Settings -> Environment Variables -> Create variable called DEVELOPMENT and change to true.
+
+Allow local host to run the app ... in settings.py
+
+```
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST', 'jb-django-todo-app.herokuapp.com')]
+
+```
