@@ -306,5 +306,5 @@ In Settings:
 
 change `ALLOWED_HOSTS = []`
 to, for example:
-`ALLOWED_HOSTS = ['https://jb-django-todo-app.herokuapp.com/']`
+`ALLOWED_HOSTS = ['jb-django-todo-app.herokuapp.com/']`
 
