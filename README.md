@@ -308,3 +308,5 @@ change `ALLOWED_HOSTS = []`
 to, for example:
 `ALLOWED_HOSTS = ['jb-django-todo-app.herokuapp.com/']`
 
+### Connecting github an heroku so pushing to Github with sync with Heroku
+
