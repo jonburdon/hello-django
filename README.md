@@ -275,4 +275,23 @@ In terminal:
 Migrates the data to new online database
 
 
+ready to push `git push heroku master`
 
+This will throw an error - we don't have any static files so they don't need to be collected.
+Need to run `heroku config:set DISABLE_COLLECTSTATIC=1`
+
+Push should now work.
+
+The app will generate an error when clicked...
+
+eg `https://jb-django-todo-app.herokuapp.com/`
+
+Check `heroku logs --tail`
+
+Try googling the error code - in this case H14
+
+Create `Procfile` with a capital P
+
+Add `web: gunicorn django_todo.wsgi:application` to the Procfile
+
+This will tell 
